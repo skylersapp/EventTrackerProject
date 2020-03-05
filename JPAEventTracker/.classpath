@@ -28,5 +28,25 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="lib" path="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.3.RELEASE/dd386a02e40b915ab400a3bf9f586d2dc4c0852c/spring-web-5.2.3.RELEASE.jar" sourcepath="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.3.RELEASE/8a8cf73bedeb3b8bc1a320f89680507c54637b19/spring-web-5.2.3.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.2.3.RELEASE/250c8c641433dc06b1b44e4563fa08a2fbf8954/spring-beans-5.2.3.RELEASE.jar" sourcepath="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.2.3.RELEASE/b5c539bbfce38bab766e534876a7d2b8e67afe/spring-beans-5.2.3.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.4.10.Final/365690f87b040dc5d22cc24a4daff76d1cffef23/hibernate-core-5.4.10.Final.jar" sourcepath="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.4.10.Final/4e0ba9d3f859ef2f2c59edf1b6f3ab2581cd5add/hibernate-core-5.4.10.Final-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.2.3.RELEASE/7750c95c96c7a1885c8b1b503ba915bc33ca579a/spring-context-5.2.3.RELEASE.jar" sourcepath="/Users/skylersapp/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.2.3.RELEASE/3ef2c27cf36f740d5dba6e8dcdba51be3be87897/spring-context-5.2.3.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
