@@ -10,7 +10,7 @@
     
     <!-- Tables go here. -->
 
-	<class>com.skilldistillery.jpavideostore.entities.FIXME</class>
+	<class>com.skilldistillery.jpavideostore.entities.Jobs</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/eventdb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
