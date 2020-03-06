@@ -16,7 +16,7 @@ export class Jobs {
   salary: number;
 
   constructor(id?: number, company?: string,  dateApplied?: string, position?: string, firstInterview?: string, interviewer?: string,
-    dateFollowup?: string, dateNext?: string, positionOffered?: boolean,  salary?: number){
+    dateFollowup?: string, dateNext?: string, positionOffered: boolean = false,  salary?: number){
 
       this.id = id;
       this.company = company;

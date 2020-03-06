@@ -11,11 +11,12 @@ export class JobsComponent implements OnInit {
 
   //FIELDS
 
-  jobs: Jobs[] = [];
-  selected: Jobs = null;
+  jobs;
+  selected = null;
   editJob: Jobs = new Jobs();
   newJob: Jobs = new Jobs();
-  addJobBool = false
+  addJobBool = false;
+  editJobBool = false;
 
   //CONSTRUCTORS
 
@@ -27,7 +28,13 @@ export class JobsComponent implements OnInit {
     this.addJobBool = true;
   }
 
+  updateJobButton(){
+    this.editJobBool = true;
+    this.editJob = Object.assign({}, this.selected)
+  }
+
   getNumberOfJobs(){
+    console.log(this.jobs)
     return this.jobs.length;
   }
 
@@ -39,41 +46,58 @@ export class JobsComponent implements OnInit {
   goBack(){
     this.selected = null;
   }
+
   destroyJob(id: number){
-    return this.jobs = null;
+    this.jobsSvc.delete(id).subscribe(
+       job => {
+         this.jobs = this.jobs.filter( x => { return x.id !== id})
+       }
+    )
   }
 
-  setEditTodo(){
-    this.editJob = Object.assign({}, this.selected);
-  }
-  generateId() {
-    return this.jobs[this.jobs.length - 1].id + 1;
-  }
   onSubmit(){
     this.getNumberOfJobs();
     this.addJobBool = false;
   }
 
+  onSubmitUpdate(){
+    this.getNumberOfJobs();
+    this.editJobBool = false;
+  }
+
   addJob(){
-    this.newJob.id = this.generateId();
-    this.newJob.company = null;
-    this.newJob.dateApplied = null;
-    this.newJob.position = null;
-    this.newJob.firstInterview = null;
-    this.newJob.interviewer = null;
-    this.newJob.dateFollowup = null;
-    this.newJob.dateNext = null;
-    this.newJob.positionOffered = false;
-    this.newJob.salary = null;
+    this.jobsSvc.create(this.newJob).subscribe(
+      job => {
+        this.jobs.push(job)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
 
-  // ________________________________
-
-    this.jobs.push(this.newJob);
-    this.newJob = new Jobs();
+  updateJob(){
+    this.jobsSvc.put(this.editJob, this.selected.id).subscribe(
+      job => {
+        this.jobs = this.jobs.map( x => {
+          if(x.id === job.id) {
+            this.selected = job;
+            return this.editJob;
+          }
+          return x;
+        })
+      }
+    )
   }
 
   ngOnInit(){
-    this.jobs = this.jobsSvc.index();
+    this.jobsSvc.index().subscribe(
+      jobs => {
+        console.log(jobs)
+        this.jobs = jobs;
+      },
+      error => console.log(error)
+    );
   }
 
 }

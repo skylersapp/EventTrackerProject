@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Jobs } from '../models/jobs';
+import { HttpClient } from '@angular/common/http'
 
 
 @Injectable({
@@ -8,6 +9,7 @@ import { Jobs } from '../models/jobs';
 export class JobsService {
 
   //FIELDS
+  url = "http://localhost:5050/api/jobs"
 
   private jobs: Jobs[] =
   [
@@ -16,18 +18,23 @@ export class JobsService {
 
   //CONSTRUCTORS
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   //METHODS
 
-  index(): Jobs[] {
-    return [...this.jobs];
+  index() {
+    return this.http.get(this.url).pipe()
   }
 
   create(jobsItem: Jobs){
-    this.jobs.push(jobsItem);
+    return this.http.post(this.url, jobsItem).pipe();
   }
 
+  put(jobsItem: Jobs, id: number) {
+    return this.http.put<Jobs>(this.url + "/" + id, jobsItem).pipe();
+  }
 
-
+  delete(id: number) {
+    return this.http.delete(this.url + "/" + id).pipe();
+  }
 }

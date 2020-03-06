@@ -19,23 +19,27 @@
     </button>
   </div>
 
-  <table *ngIf="!selected" id="maintable">
+  <table *ngIf="!selected && !addJobBool && !editJobBool" id="maintable">
     <thead>
-      <th style="width: 33.3%">
+      <th style="width: 25%">
         Company <br />
         _______
         <br />
       </th>
-      <th style="width: 33.3%">
+      <th style="width: 25%">
         Date Applied <br />
         _______
         <br /><br />
       </th>
-      <th style="width: 33.3%">
+      <th style="width: 25%">
         Position<br />
         _______
         <br /><br />
-      </th>
+      <th>
+        REMOVE<br />
+        _______
+      <br /><br />
+    </th>
     </thead>
     <tbody>
       <tr *ngFor="let j of jobs">
@@ -49,6 +53,11 @@
         </td>
         <td>
           {{ j.position }}
+        </td>
+        <td>
+          <button id="deleteButton" (click)="destroyJob(j.id)">
+              delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -70,10 +79,14 @@
     <p>Salary Offer -- {{ selected.salary }}</p>
     <br /><br />
 
+    <p><button id="updateButton" (click)="updateJobButton()">Update Job</button></p>
     <p><button id="goBackButton" (click)="goBack()">See All</button></p>
     <br />
+
+<!-- ________________________________Add Job Page_______________________________ -->
+
   </div>
-  <div id="addForm" *ngIf="addJobBool">
+  <div id="addForm" *ngIf="addJobBool && !editJobBool">
     <form #createform="ngForm">
 
       ADD A NEW JOB HERE! <br /><br />
@@ -144,6 +157,83 @@
         value="Add to list"
         (click)="addJob()"
         (click)="onSubmit()"
+      />
+    </form>
+  </div>
+
+<!-- ________________________________Update Job Page_______________________________ -->
+
+  <div id="addForm" *ngIf="editJobBool">
+    <form #createform="ngForm">
+
+      UPDATE JOB <br /><br />
+      <input
+        type="text"
+        name="company"
+        placeholder=" Company Name "
+        [(ngModel)]="editJob.company"
+      /><br /><br />
+      <input
+        type="text"
+        name="dateApplied"
+        placeholder="Application Date"
+        [(ngModel)]="editJob.dateApplied"
+      /><br /><br />
+      <input
+        type="text"
+        name="position"
+        placeholder="Position Applied For"
+        [(ngModel)]="editJob.position"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="firstInterview"
+        placeholder="Date of First Interview"
+        [(ngModel)]="editJob.firstInterview"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="interviewer"
+        placeholder="Name of Interviewer"
+        [(ngModel)]="editJob.interviewer"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="dateFollowup"
+        placeholder="Date of Followup Email/Call"
+        [(ngModel)]="editJob.dateFollowup"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="dateNext"
+        placeholder="Date of Next Interview"
+        [(ngModel)]="editJob.dateNext"
+      /><br /><br />
+
+      <input
+        type="checkbox"
+        name="positionOffered"
+        placeholder="Yes"
+        [(ngModel)]="editJob.positionOffered"
+      /><br /><br />
+
+      <input
+        type="number"
+        name="Salary"
+        placeholder="Salary Offered"
+        [(ngModel)]="editJob.salary"
+      /><br /><br />
+      <input type="text" />
+
+      <input
+        type="submit"
+        value="Add to list"
+        (click)="updateJob()"
+        (click)="onSubmitUpdate()"
       />
     </form>
   </div>

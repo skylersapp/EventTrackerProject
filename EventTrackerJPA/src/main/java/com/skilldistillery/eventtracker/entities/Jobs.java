@@ -20,20 +20,20 @@ public class Jobs {
 	private String company;
 	
 	@Column(name="date_applied")
-	private Date dateApplied;
+	private String dateApplied;
 	
 	private String position;
 	
 	@Column(name="first_interview")
-	private Date firstInterview;
+	private String firstInterview;
 	
 	private String interviewer;
 	
 	@Column(name="date_followup")
-	private Date dateFollowup;
+	private String dateFollowup;
 	
 	@Column(name="date_next_interview")
-	private Date dateNext;
+	private String dateNext;
 	
 	@Column(name="position_offered")
 	private Boolean positionOffered;
@@ -56,11 +56,11 @@ public class Jobs {
 		this.company = company;
 	}
 
-	public Date getDateApplied() {
+	public String getDateApplied() {
 		return dateApplied;
 	}
 
-	public void setDateApplied(Date dateApplied) {
+	public void setDateApplied(String dateApplied) {
 		this.dateApplied = dateApplied;
 	}
 
@@ -72,11 +72,11 @@ public class Jobs {
 		this.position = position;
 	}
 
-	public Date getFirstInterview() {
+	public String getFirstInterview() {
 		return firstInterview;
 	}
 
-	public void setFirstInterview(Date firstInterview) {
+	public void setFirstInterview(String firstInterview) {
 		this.firstInterview = firstInterview;
 	}
 
@@ -88,19 +88,19 @@ public class Jobs {
 		this.interviewer = interviewer;
 	}
 
-	public Date getDateFollowup() {
+	public String getDateFollowup() {
 		return dateFollowup;
 	}
 
-	public void setDateFollowup(Date dateFollowup) {
+	public void setDateFollowup(String dateFollowup) {
 		this.dateFollowup = dateFollowup;
 	}
 
-	public Date getDateNext() {
+	public String getDateNext() {
 		return dateNext;
 	}
 
-	public void setDateNext(Date dateNext) {
+	public void setDateNext(String dateNext) {
 		this.dateNext = dateNext;
 	}
 
