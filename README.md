@@ -71,7 +71,3 @@
 ![Alt Text](https://secure.meetupstatic.com/photos/event/c/0/a/e/600_460069326.jpeg)
 <br>
 ![Alt Text](https://miro.medium.com/max/1431/1*Rld1TfAruYCz4EA-5kHJLA.png)
-
-## Challenges
-
-## Lessons Learned
