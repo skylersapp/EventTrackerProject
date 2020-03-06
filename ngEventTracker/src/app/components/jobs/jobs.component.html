@@ -1,1 +1,150 @@
-<p>jobs works!</p>
+<head href="src/app/components/jobs/jobs.component.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Aladin|Baloo+Chettan|Bungee+Inline|Bungee+Shade|Cabin+Sketch|Chewy|Comfortaa|Faster+One|Fredericka+the+Great|Gochi+Hand|Jacques+Francois+Shadow|Modak|Monoton|Rock+Salt|Special+Elite|VT323|Vast+Shadow&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <div id="topdiv">
+    <h1 id="jt">
+      <a id="jta">-- JOBS TRACKER --</a><br />
+      <a id="jobsNumber"> {{ getNumberOfJobs() }}</a>
+    </h1>
+  </div>
+  <div>
+    <br /><br />
+    <button id="addJobButton" (click)="addJobButton()">
+      Add New Job Here!
+    </button>
+  </div>
+
+  <table *ngIf="!selected" id="maintable">
+    <thead>
+      <th style="width: 33.3%">
+        Company <br />
+        _______
+        <br />
+      </th>
+      <th style="width: 33.3%">
+        Date Applied <br />
+        _______
+        <br /><br />
+      </th>
+      <th style="width: 33.3%">
+        Position<br />
+        _______
+        <br /><br />
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let j of jobs">
+        <td>
+          <button id="displayButton" (click)="displayJob(j)">
+            {{ j.company }}
+          </button>
+        </td>
+        <td>
+          {{ j.dateApplied }}
+        </td>
+        <td>
+          {{ j.position }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="display" *ngIf="selected">
+    <p>Company -- {{ selected.company }}</p>
+    <br />
+    <p>Date applied -- {{ selected.dateApplied }}</p>
+    <br />
+    <p>Position applied -- {{ selected.position }}</p>
+    <br />
+    <p>Date 1st Interview -- {{ selected.firstInterview }}</p>
+    <br />
+    <p>Date I followed up -- {{ selected.dateFollowup }}</p>
+    <br />
+    <p>Position Offered -- {{ selected.positionOffered }}</p>
+    <br />
+    <p>Salary Offer -- {{ selected.salary }}</p>
+    <br /><br />
+
+    <p><button id="goBackButton" (click)="goBack()">See All</button></p>
+    <br />
+  </div>
+  <div id="addForm" *ngIf="addJobBool">
+    <form #createform="ngForm">
+
+      ADD A NEW JOB HERE! <br /><br />
+      <input
+        type="text"
+        name="company"
+        placeholder=" Company Name "
+        [(ngModel)]="newJob.company"
+      /><br /><br />
+      <input
+        type="text"
+        name="dateApplied"
+        placeholder="Application Date"
+        [(ngModel)]="newJob.dateApplied"
+      /><br /><br />
+      <input
+        type="text"
+        name="position"
+        placeholder="Position Applied For"
+        [(ngModel)]="newJob.position"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="firstInterview"
+        placeholder="Date of First Interview"
+        [(ngModel)]="newJob.firstInterview"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="interviewer"
+        placeholder="Name of Interviewer"
+        [(ngModel)]="newJob.interviewer"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="dateFollowup"
+        placeholder="Date of Followup Email/Call"
+        [(ngModel)]="newJob.dateFollowup"
+      /><br /><br />
+
+      <input
+        type="text"
+        name="dateNext"
+        placeholder="Date of Next Interview"
+        [(ngModel)]="newJob.dateNext"
+      /><br /><br />
+
+      <input
+        type="checkbox"
+        name="positionOffered"
+        placeholder="Yes"
+        [(ngModel)]="newJob.positionOffered"
+      /><br /><br />
+
+      <input
+        type="number"
+        name="Salary"
+        placeholder="Salary Offered"
+        [(ngModel)]="newJob.salary"
+      /><br /><br />
+      <input type="text" />
+
+      <input
+        type="submit"
+        value="Add to list"
+        (click)="addJob()"
+        (click)="onSubmit()"
+      />
+    </form>
+  </div>
+</body>

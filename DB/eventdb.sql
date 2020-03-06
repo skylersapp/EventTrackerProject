@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `Jobs` ;
 CREATE TABLE IF NOT EXISTS `Jobs` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `company` VARCHAR(45) NOT NULL,
-  `date_applied` DATE NOT NULL,
+  `date_applied` VARCHAR(45) NOT NULL,
   `position` VARCHAR(45) NULL,
-  `first_interview` DATE NULL,
+  `first_interview` VARCHAR(45) NULL,
   `interviewer` VARCHAR(45) NULL,
-  `date_followup` DATE NULL,
-  `date_next_interview` DATE NULL,
+  `date_followup` VARCHAR(45) NULL,
+  `date_next_interview` VARCHAR(45) NULL,
   `position_offered` TINYINT NOT NULL DEFAULT 0,
   `salary` DOUBLE NULL,
   PRIMARY KEY (`id`))
@@ -55,7 +55,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `eventdb`;
-INSERT INTO `Jobs` (`id`, `company`, `date_applied`, `position`, `first_interview`, `interviewer`, `date_followup`, `date_next_interview`, `position_offered`, `salary`) VALUES (1, 'Skill Distillery', '2020-03-04', 'person', '2020-03-10', 'Briana Young', NULL, NULL, 0, NULL);
+INSERT INTO `Jobs` (`id`, `company`, `date_applied`, `position`, `first_interview`, `interviewer`, `date_followup`, `date_next_interview`, `position_offered`, `salary`) VALUES (1, 'Skill Distillery', 'March 04, 2020', 'person', '2020-03-10', 'Briana Young', NULL, NULL, 0, NULL);
 
 COMMIT;
 

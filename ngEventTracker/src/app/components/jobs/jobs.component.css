@@ -1,0 +1,120 @@
+body {
+  /* background-color: lightblue; */
+  background-image: url(https://wallpaperplay.com/walls/full/f/f/4/158658.jpg);
+  min-height: 100vh;
+  ;
+}
+#jt {
+  margin-top: 1cm;
+  border-style: groove;
+  border-color: burlywood;
+  border-width: 8px;
+  text-align: center;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 0.6in;
+  margin: auto;
+  width: 720px;
+  height: 90px;
+  padding: 60px;
+  background-color: rgb(15, 38, 15);
+  box-shadow:  15px 15px 10px black;
+
+}
+#jta {
+  color: white;
+
+}
+#maintable{
+  padding-top: 0.5cm;
+  border-style: groove;
+  border-color: burlywood;
+  border-width: 8px;
+  margin-top: 1cm;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: rgb(15, 38, 15);
+  box-shadow: 15px 15px  10px black;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 20pt;
+  width: 80%;
+}
+th{
+  opacity: 75%;
+}
+
+tr{
+  text-align: center;
+  width: auto;
+  color: white;
+  border-color:  transparent;
+  background-color: rgb(15, 38, 15);
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 15pt;
+}
+button {
+
+  text-align: center;
+  width: auto;
+  color: white;
+  border-color:  transparent;
+  background-color: rgb(15, 38, 15);
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 15pt;
+}
+
+#display{
+  text-align: center;
+  padding-top: 0.5cm;
+  border-style: groove;
+  border-color: burlywood;
+  border-width: 8px;
+  margin-top: 1cm;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  color: white;
+  background-color: rgb(15, 38, 15);
+  box-shadow: 15px 15px  10px black;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 20pt;
+  width: 40%;
+
+}
+
+#goBackButton{
+  text-align: left;
+  border-radius: 3cm;
+  background-color: white;
+  font-size: 0.4in;
+  color: rgb(15, 38, 15);
+}
+#topdiv{
+  padding-top:2cm;
+}
+
+#jobsNumber{
+  font-family: 'Cabin Sketch', cursive;
+  border-radius: 0.8in;
+  background-color: white;
+  font-size: 0.6in;
+  color: rgb(15, 38, 15);
+  margin-bottom: 2cm;
+}
+#addJobButton{
+  margin-top: 0.5cm;
+  margin-left: 7.0in;
+  text-align: left;
+  border-radius: 3cm;
+  background-color: white;
+  font-size: 0.4in;
+  color: rgb(15, 38, 15);
+}
+
+#addForm{
+
+
+}
+
+
+
